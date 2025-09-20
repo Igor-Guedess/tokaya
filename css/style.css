@@ -13473,7 +13473,7 @@ input.text-center{
   border-radius:100% 100% 0 0;
   -moz-border-radius:100% 100% 0 0;
   -webkit-border-radius:100% 100% 0 0;
-  border: solid 2px var(--primary-color);
+  border: solid 2px var(--branco);
 }
 
 .shape-mask-1{

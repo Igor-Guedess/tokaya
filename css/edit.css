@@ -1,3 +1,10 @@
+:root {
+  --amarelo: #FDC82F;
+  --laranja: #F0400F;
+  --marrom: #964736;
+  --branco: #FFFFFF;
+}
+
 .click {
     display: inline-block;
     position: relative;
@@ -145,3 +152,54 @@ footer .d-lg-flex > div {
     padding: 30px !important; /* Aumenta o padding interno da barra branca */
 }
 
+.fbox {
+    display: flex;
+    align-items: center;
+}
+
+.minitext {
+    font-size: 32px;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+.amarelo {
+    color: var(--amarelo) !important;
+}
+
+.branco {
+    color: var(--branco) !important;
+}
+
+.laranja {
+    color: var(--laranja) !important;
+}
+
+.marrom {
+    color: var(--marrom) !important;
+}
+
+.de-rating-ext i{
+  color: var(--amarelo) !important;
+}
+
+.amarelobg {
+    background: var(--amarelo);
+}
+
+.laranjabg {
+    background: #BA4428;
+}
+
+.slider-extra i{
+  color: var(--amarelo) !important;
+}
+
+.subtitle {
+  border: solid 1px var(--amarelo);
+  padding: 0 10px;
+}
+
+.minitext {
+    font-size: 16px;
+}
