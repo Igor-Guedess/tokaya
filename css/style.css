@@ -21328,3 +21328,11 @@ border-radius:20px 0 0 20px;
 .icon {
   width: 250px;
 }
+
+.centrs {
+  justify-self: center;
+}
+
+.noborder {
+  border-radius: 0 !important;
+}

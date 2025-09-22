@@ -158,9 +158,10 @@ footer .d-lg-flex > div {
 }
 
 .minitext {
-    font-size: 32px;
+    font-size: 16px;
     line-height: 1.4;
     font-weight: 300;
+
 }
 
 .amarelo {
@@ -200,6 +201,11 @@ footer .d-lg-flex > div {
   padding: 0 10px;
 }
 
-.minitext {
-    font-size: 16px;
+.itemedt {
+    width: 50%;
+    justify-self: center;
+}
+
+.width28 {
+    width: 28%;
 }
