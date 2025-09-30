@@ -209,3 +209,8 @@ footer .d-lg-flex > div {
 .width28 {
     width: 28%;
 }
+
+.blkline {
+    padding: 30px 0 30px 0;
+    border-top: solid 0.5px rgb(0, 0, 0, .2);
+}
