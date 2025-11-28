@@ -639,18 +639,6 @@
 
             </section>
 
-            <section class="no-top no-bottom section-dark" aria-label="section">
-                <a class="d-block hover popup-youtube" href="https://www.youtube.com/watch?v=C6rf51uHWJg">
-                    <div class="relative overflow-hidden">
-                        <div class="absolute start-0 w-100 abs-middle fs-36 text-white text-center z-2">
-                            <div class="player wow scaleIn"><span></span></div>
-                        </div> 
-                        <div class="absolute w-100 h-100 top-0 bg-dark hover-op-05"></div>
-                        <img src="images/background/2.webp" class="img-fluid" alt="">
-                    </div>
-                </a>
-            </section>
-
             <section class="bg-light relative pt50 no-bottom">
                 <div class="container relative z-2">
                     <div class="row g-4">
@@ -763,7 +751,7 @@
                                 <a href="mailto:tokayaclub@gmail.com" target="_blank" class="click id-color">E-mail</a><br>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </footer>
@@ -786,7 +774,6 @@
             const adultosInput = document.getElementById('adultos-input');
             const criancasInput = document.getElementById('criancas-input');
             
-            // Impedir que adultos fique menor que 1
             if (adultosInput) {
                 adultosInput.addEventListener('input', function() {
                     const valor = parseInt(this.value) || 0;
@@ -795,7 +782,6 @@
                     }
                 });
                 
-                // Capturar cliques nos botões + e -
                 const adultosContainer = adultosInput.closest('.de-number');
                 if (adultosContainer) {
                     const btnMinus = adultosContainer.querySelector('.d-minus');
@@ -812,7 +798,6 @@
                 }
             }
             
-            // Impedir que crianças fique menor que 0
             if (criancasInput) {
                 criancasInput.addEventListener('input', function() {
                     const valor = parseInt(this.value) || 0;
