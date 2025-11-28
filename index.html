@@ -303,7 +303,7 @@
                                         <h6 class="id-color">Adultos</h6>
                                         <div class="de-number">
                                             <span class="d-minus">-</span>
-                                            <input type="text" class="no-border no-bg" value="1">
+                                            <input type="text" id="adultos-input" class="no-border no-bg" value="1">
                                             <span class="d-plus">+</span>
                                         </div>
                                     </div>
@@ -313,7 +313,7 @@
                                         <h6 class="id-color">Crianças</h6>
                                         <div class="de-number">
                                             <span class="d-minus">-</span>
-                                            <input type="text" class="no-border no-bg" value="0">
+                                            <input type="text" id="criancas-input" class="no-border no-bg" value="0">
                                             <span class="d-plus">+</span>
                                         </div>
                                     </div>
@@ -321,7 +321,7 @@
                             </div>
                         </div>
                         <div class="col-lg-3 text-lg-end text-center">
-                            <a class="btn-main" href="rooms.html">Consultar</a>
+                            <a class="btn-main" href="#" id="btn-consultar-reserva">Consultar</a>
                         </div>
                     </div>
                 </div>
@@ -760,7 +760,7 @@
                                 <h3 class="fs-20">Contatos</h3>
                                 <a href="https://api.whatsapp.com/send/?phone=5573999812992&text&type=phone_number&app_absent=0" target="_blank" class="click id-color">Whatsapp</a><br>
                                 <a href="tel:+5573999812992" class="click id-color">Ligar agora</a><br>
-                                <a href="mailto:tokayabeachclub@gmail.com" target="_blank" class="click id-color">E-mail</a><br>
+                                <a href="mailto:tokayaclub@gmail.com" target="_blank" class="click id-color">E-mail</a><br>
                             </div>
                         </div>
                     </div>                    
@@ -779,6 +779,77 @@
     <script src="js/swiper.js"></script>
     <script src="js/custom-marquee.js"></script>
     <script src="js/custom-swiper-2.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnConsultar = document.getElementById('btn-consultar-reserva');
+            const adultosInput = document.getElementById('adultos-input');
+            const criancasInput = document.getElementById('criancas-input');
+            
+            // Impedir que adultos fique menor que 1
+            if (adultosInput) {
+                adultosInput.addEventListener('input', function() {
+                    const valor = parseInt(this.value) || 0;
+                    if (valor < 1) {
+                        this.value = '1';
+                    }
+                });
+                
+                // Capturar cliques nos botões + e -
+                const adultosContainer = adultosInput.closest('.de-number');
+                if (adultosContainer) {
+                    const btnMinus = adultosContainer.querySelector('.d-minus');
+                    if (btnMinus) {
+                        btnMinus.addEventListener('click', function() {
+                            setTimeout(function() {
+                                const valor = parseInt(adultosInput.value) || 0;
+                                if (valor < 1) {
+                                    adultosInput.value = '1';
+                                }
+                            }, 10);
+                        });
+                    }
+                }
+            }
+            
+            // Impedir que crianças fique menor que 0
+            if (criancasInput) {
+                criancasInput.addEventListener('input', function() {
+                    const valor = parseInt(this.value) || 0;
+                    if (valor < 0) {
+                        this.value = '0';
+                    }
+                });
+            }
+            
+            if (btnConsultar) {
+                btnConsultar.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const dataPicker = document.getElementById('date-picker');
+                    const adultos = document.getElementById('adultos-input');
+                    const criancas = document.getElementById('criancas-input');
+                    
+                    const dataEscolhida = dataPicker.value || 'Data não selecionada';
+                    const numAdultos = parseInt(adultos.value) || 1;
+                    const numCriancas = parseInt(criancas.value) || 0;
+                    
+                    let mensagem = `Olá! Gostaria de fazer uma consulta de reserva no Tokaya Beach Club:%0A%0A`;
+                    mensagem += `*Data:* ${dataEscolhida}%0A`;
+                    mensagem += `*Adultos:* ${numAdultos}%0A`;
+                    if (numCriancas > 0) {
+                        mensagem += `*Crianças:* ${numCriancas}%0A`;
+                    }
+                    
+                    mensagem += `%0AAguardo retorno com disponibilidade e valores. Obrigado!`;
+                    
+                    const numeroWhatsApp = '557399812992';
+                    const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+                    window.open(urlWhatsApp, '_blank');
+                });
+            }
+        });
+    </script>
 
 </body>
 
