@@ -16,6 +16,7 @@
     <link href="css/swiper.css" rel="stylesheet" type="text/css" >
     <link href="css/style.css" rel="stylesheet" type="text/css" >
     <link href="css/coloring.css" rel="stylesheet" type="text/css" >
+    <link href="css/edit.css" rel="stylesheet" type="text/css" >
     <!-- color scheme -->
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css" >
     <!-- custom carousel styles -->
@@ -38,7 +39,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="d-flex justify-content-between xs-hide">
-                                <div class="header-widget d-flex">                                    
+                                <div class="header-widget d-flex">
                                     <div class="topbar-widget"><a href="https://www.google.com/maps/place/TOKAYA+BEACH+CLUB/@-15.0563626,-38.9979851,19z/data=!4m9!3m8!1s0x739bd700a311703:0xa569d2cc656df60b!5m2!4m1!1i2!8m2!3d-15.0563717!4d-38.9977181!16s%2Fg%2F11x1zkvlps?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank"><i class="icofont-location-pin"></i>Estrada Una-Ilhéus, km 28 - Olivença, Ilhéus-BA</a></div>
                                     <div class="topbar-widget"><a href="tel:+5573999812992" target="_blank"><i class="icofont-phone"></i>+55 73 99981-2992</a></div>
                                     <div class="topbar-widget"><a href="mailto:tokayaclub@gmail.com"><i class="icofont-envelope"></i>tokayaclub@gmail.com</a></div>
@@ -73,12 +74,13 @@
                                 <ul id="mainmenu">
                                     <li><a class="menu-item" href="index.html">Home</a>
                                     </li>
-                                    <li><a class="menu-item" href="#">Acomodações</a>
+                                    <li class="desktop-menu-item"><a class="menu-item" href="#">Acomodações</a>
                                         <ul class="mega">
                                             <li>
                                                 <div class="container">
                                                     <div class="sb-menu p-4">
                                                         <div class="row g-3">
+
                                                             <div class="col-lg-3 text-center">
                                                                 <div class="relative hover text-center overflow-hidden soft-shadow rounded-5px">
                                                                     <a href="suites.html">
@@ -86,7 +88,7 @@
                                                                     </a>
                                                                     <div class="abs w-100 h-100 start-0 top-0 hover-bg-color"></div>
                                                                 </div>
-                                                                <h5 class="mt-2 mb-0">Suítes</h5>                          
+                                                                <h5 class="mt-2 mb-0">Suítes</h5>
                                                             </div>
 
                                                             <div class="col-lg-3 text-center">
@@ -95,8 +97,8 @@
                                                                         <img src="images/casa2.png" class="w-100 relative hover-scale-1-1" alt="">
                                                                     </a>
                                                                     <div class="abs w-100 h-100 start-0 top-0 hover-bg-color"></div>
-                                                                </div>                            
-                                                                <h5 class="mt-2 mb-0">Chalés</h5>                          
+                                                                </div>
+                                                                <h5 class="mt-2 mb-0">Chalés</h5>
                                                             </div>
 
                                                             <div class="col-lg-3 text-center">
@@ -106,16 +108,24 @@
                                                                     </a>
                                                                     <div class="abs w-100 h-100 start-0 top-0 hover-bg-color"></div>
                                                                 </div>
-                                                                <h5 class="mt-2 mb-0">Casas</h5>                          
+                                                                <h5 class="mt-2 mb-0">Casas</h5>
                                                             </div>
+                                                            
                                                         </div>
                                                     </div>
-                                                </div>                                                
+                                                </div>
                                             </li>
                                         </ul>
                                     </li>
+                                    <li class="mobile-menu-item"><a class="menu-item">Acomodações</a>
+                                        <ul>
+                                            <li><a href="suites.html">Suítes</a></li>
+                                            <li><a href="chales.html">Chalés</a></li>
+                                            <li><a href="casas.html">Casas</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a class="menu-item" href="facilities.html">Eventos</a></li>
-                                    <li><a class="menu-item" href="#">Saiba mais</a>
+                                    <li><a class="menu-item">Saiba mais</a>
                                         <ul>
                                             <li><a href="about.html">Sobre nós</a></li>
                                             <li><a href="special-offers.html">Ofertas Especiais</a></li>
@@ -123,11 +133,11 @@
                                         </ul>
                                     </li>
                                     <li><a class="menu-item" href="cardapio.html">Cardápio</a></li>
-                                    <li><a class="menu-item" href="#">Contatos</a></li>
+                                    <li><a class="menu-item" href="contact.html">Contatos</a></li>
                                 </ul>
                             </div>
                             <div class="de-flex-col">
-                                <div class="menu_side_area">          
+                                <div class="menu_side_area">
                                     <a href="https://wa.me/557399812992" target="_blank"  class="btn-main btn-line">Reservas</a>
                                     <span id="menu-btn"></span>
                                 </div>
@@ -160,62 +170,85 @@
                 <div class="de-overlay"></div>
             </section>
 
-            <section class="relative lines-deco">
+            <section class="relative">
                 <div class="container">
                     <div class="row g-4 justify-content-center">
-
-                        <div class="col-lg-7">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="mb-4">Meios de Contato:</h2>
                             
-                            <form name="contactForm" id="contact_form" class="position-relative z1000" method="post" action="contact.php">
-                                <div id="contact_form_wrap" class="row gx-4">
-                                    <div class="col-lg-12">
-                                        <div class="text-center">
-                                            <h3 class="mb-4">Escreva uma mensagem</h3>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-6 col-md-6 mb10">
-                                        <div class="field-set">
-                                            <input type="text" name="name" id="name" class="form-control" placeholder="Seu nome" required>
-                                        </div>
-
-                                        <div class="field-set">
-                                            <input type="text" name="email" id="email" class="form-control" placeholder="Seu e-mail" required>
-                                        </div>
-
-                                        <div class="field-set">
-                                            <input type="text" name="phone" id="phone" class="form-control" placeholder="Seu telefone" required>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-lg-6 col-md-6">
-                                        <div class="field-set mb20">
-                                            <textarea name="message" id="message" class="form-control" placeholder="Sua mensagem" required></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-lg-12">
-                                        <div class="text-center">
-                                            <input type='submit' id='send_message' value='Enviar mensagem' class="btn-main">
-                                        </div>
+                            <div class="row g-3 justify-content-center">
+                                <div class="col-6 col-md-4 col-lg-2">
+                                    <div class="p-2">
+                                        <a href="https://wa.me/557399812992" target="_blank" class="text-decoration-none">
+                                            <i class="fa-brands fa-whatsapp fa-2x id-color mb-2"></i>
+                                            <h6 class="mb-1">WhatsApp</h6>
+                                            <p class="mb-0 fs-14">73 99981-2992</p>
+                                        </a>
                                     </div>
                                 </div>
-                                
 
-                                <div id="success_message" class='success'>
-                                    Sua mensagem foi enviada com sucesso. Atualize esta página se quiser enviar mais mensagens.
+                                <div class="col-6 col-md-4 col-lg-2">
+                                    <div class="p-2">
+                                        <a href="tel:+5573999812992" class="text-decoration-none">
+                                            <i class="icofont-phone fa-2x id-color mb-2"></i>
+                                            <h6 class="mb-1">Telefone</h6>
+                                            <p class="mb-0 fs-14">73 99981-2992</p>
+                                        </a>
+                                    </div>
                                 </div>
-                                <div id="error_message" class='error'>
-                                    Desculpe, houve um erro ao enviar seu formulário.
-                                </div>
-                            </form>
 
+                                <div class="col-6 col-md-4 col-lg-2">
+                                    <div class="p-2">
+                                        <a href="mailto:tokayaclub@gmail.com" class="text-decoration-none">
+                                            <i class="icofont-envelope fa-2x id-color mb-2"></i>
+                                            <h6 class="mb-1">E-mail</h6>
+                                            <p class="mb-0 fs-14">tokayaclub@<br>gmail.com</p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-4 col-lg-2">
+                                    <div class="p-2">
+                                        <a href="https://www.instagram.com/tokayaclub/" target="_blank" class="text-decoration-none">
+                                            <i class="fa-brands fa-instagram fa-2x id-color mb-2"></i>
+                                            <h6 class="mb-1">Instagram</h6>
+                                            <p class="mb-0 fs-14">@tokayaclub</p>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 col-md-4 col-lg-2">
+                                    <div class="p-2">
+                                        <a href="https://www.google.com/maps/place/TOKAYA+BEACH+CLUB/@-15.0563626,-38.9979851,19z/data=!4m9!3m8!1s0x739bd700a311703:0xa569d2cc656df60b!5m2!4m1!1i2!8m2!3d-15.0563717!4d-38.9977181!16s%2Fg%2F11x1zkvlps?entry=ttu&g_ep=EgoyMDI1MDYwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-decoration-none">
+                                            <i class="icofont-location-pin fa-2x id-color mb-2"></i>
+                                            <h6 class="mb-1">Endereço</h6>
+                                            <p class="mb-0 fs-14">Estrada Una-Ilhéus, km 28<br>Olivença, Ilhéus-BA</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        
                     </div>
                 </div>
-            </section>            
+            </section>
 
+            <section class="no-top no-bottom">
+                <div class="container-fluid p-0">
+                    <div class="row g-0">
+                        <div class="col-12">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d963.7622464433803!2d-38.99798507070313!3d-15.056362599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x739bd700a311703%3A0xa569d2cc656df60b!2sTOKAYA%20BEACH%20CLUB!5e0!3m2!1spt-BR!2sbr!4v1732901234567!5m2!1spt-BR!2sbr" 
+                                width="100%" 
+                                height="600" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
         <!-- content close -->
         <!-- footer begin -->
@@ -239,7 +272,7 @@
                                 <a href="mailto:tokayaclub@gmail.com" target="_blank" class="click id-color">E-mail</a><br>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </footer>

@@ -47,18 +47,16 @@
     opacity: 1;
 }
 
-/* Estilo personalizado para o botão Ver mais detalhes */
 .hover .btn-line {
-    border: 2px solid #ffffff; /* Cor padrão da borda */
+    border: 2px solid #ffffff;
     transition: all 0.3s ease;
 }
 
 .hover .btn-line:hover {
-    border: 2px solid #ffffff; /* Mantém a borda branca sólida */
-    background: rgba(255,255,255,0.2); /* Fundo semi-transparente no hover */
+    border: 2px solid #ffffff;
+    background: rgba(255,255,255,0.2);
 }
 
-/* Ajustes do footer e subfooter */
 .subfooter {
     background: none !important;
     padding-top: 20px !important;
@@ -66,7 +64,6 @@
     margin-top: 40px;
 }
 
-/* Centralização do footer */
 footer .d-lg-flex {
     display: flex !important;
     justify-content: space-around !important;
@@ -79,7 +76,6 @@ footer .d-lg-flex > div {
     flex: 1;
 }
 
-/* Controle de exibição do carrossel de quartos */
 @media (min-width: 992px) {
     .owl-custom-nav[data-target="#room-carousel"] {
         display: block !important;
@@ -109,11 +105,15 @@ footer .d-lg-flex > div {
         margin: 0 20px !important;
         flex-shrink: 0;
     }
+}
 
-    .owl-custom-nav .btn-next,
-    .owl-custom-nav .btn-prev {
-        display: none !important;
-    }
+/* Controle de menu desktop vs mobile */
+#mainmenu > li.mobile-menu-item {
+    display: none;
+}
+
+#mainmenu > li.desktop-menu-item {
+    display: block;
 }
 
 @media (max-width: 991px) {
@@ -121,7 +121,6 @@ footer .d-lg-flex > div {
         display: block;
     }
 
-    /* Ajuste do footer para mobile */
     footer .d-lg-flex {
         flex-direction: column;
         gap: 20px;
@@ -131,25 +130,44 @@ footer .d-lg-flex > div {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    /* Esconde o menu desktop com imagens */
+    #mainmenu > li.desktop-menu-item {
+        display: none !important;
+    }
+
+    /* Mostra o menu simples para mobile */
+    #mainmenu > li.mobile-menu-item {
+        display: block !important;
+    }
 }
 
-/* Ajusta o container do grid para centralizar */
+@media (min-width: 992px) {
+    /* Mostra o menu desktop */
+    #mainmenu > li.desktop-menu-item {
+        display: block !important;
+    }
+    
+    /* Esconde o menu mobile */
+    #mainmenu > li.mobile-menu-item {
+        display: none !important;
+    }
+}
+
 #mainmenu > li ul.mega .row.g-3 {
     justify-content: center !important;
-    gap: 30px !important; /* Aumenta o espaçamento entre as colunas */
+    gap: 30px !important;
 }
 
-/* Ajusta as colunas */
 #mainmenu > li ul.mega .col-lg-3 {
-    width: 28% !important; /* Ajusta a largura para dar mais espaço entre as colunas */
-    padding: 0 !important; /* Remove o padding padrão */
+    width: 28% !important;
+    padding: 0 !important;
 }
 
-/* Mantém a barra branca do tamanho que você já definiu */
 #mainmenu > li ul.mega .sb-menu {
     width: 900px !important;
     margin: 0 auto;
-    padding: 30px !important; /* Aumenta o padding interno da barra branca */
+    padding: 30px !important;
 }
 
 .fbox {
@@ -206,11 +224,226 @@ footer .d-lg-flex > div {
     justify-self: center;
 }
 
+section.jarallax.section-dark {
+    min-height: 600px;
+    overflow: hidden;
+}
+
+section.jarallax.section-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: 1;
+    pointer-events: none;
+}
+
+@media (max-width: 1200px) {
+    section.jarallax.section-dark {
+        min-height: 550px;
+    }
+
+    .box-slider-decor {
+        scale: 1.5;
+    }
+
+    .swiper-slide:nth-child(1) .swiper-inner {
+        background-position: 50% center !important;
+    }
+
+    .swiper-slide:nth-child(2) .swiper-inner {
+        background-position: 100% center !important;
+    }
+
+    .swiper-slide:nth-child(3) .swiper-inner {
+        background-position: 70% center !important;
+    }
+}
+
+@media (max-width: 991px) {
+    section.jarallax.section-dark {
+        min-height: 500px;
+    }
+    
+    .itemedt {
+        width: 70%;
+    }
+
+    .shape-mask-1, .shape-mask-2 {
+        overflow: visible;
+    }
+
+    .artt h2 {
+        margin-top: 24px;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+
+    .artt p {
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    
+    .artt .row {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .artt .row > div:has(.shape-mask-1),
+    .artt .row > div:has(.shape-mask-2) {
+        order: 1;
+    }
+    
+    .artt .row > div:has(.ms-lg-5),
+    .artt .row > div:has(.me-lg-5) {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    section.jarallax.section-dark {
+        min-height: 450px;
+    }
+    
+    section.jarallax.section-dark::before {
+        background: rgba(0, 0, 0, 0.2) !important;
+        backdrop-filter: blur(5px) !important;
+        -webkit-backdrop-filter: blur(5px) !important;
+        z-index: 2 !important;
+    }
+    
+    .itemedt {
+        width: 85%;
+    }
+    
+    .width28 {
+        display: none !important;
+    }
+    
+    section.jarallax.section-dark .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    section.lines-deco:before{
+        display: none;
+    }
+
+    section.lines-deco:after{
+        display: none;
+    }
+
+    .xwx .wow .relative .pl-90 p {
+        font-size: 14px !important;
+    }
+
+    .box-slider-decor {
+        scale: 2;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    .swiper-slide:nth-child(1) .swiper-inner {
+        background-position: 0% center !important;
+    }
+
+    .swiper-slide:nth-child(2) .swiper-inner {
+        background-position: 80% center !important;
+    }
+
+    .swiper-slide:nth-child(3) .swiper-inner {
+        background-position: 80% center !important;
+    }
+}
+
+@media (max-width: 576px) {
+    section.jarallax.section-dark {
+        min-height: 400px;
+    }
+    
+    section.jarallax.section-dark::before {
+        background: rgba(0, 0, 0, 0.2) !important;
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+        z-index: 2 !important;
+    }
+    
+    .itemedt {
+        width: 95%;
+    }
+    
+    section.jarallax.section-dark .container {
+        position: relative;
+        z-index: 3;
+    }
+
+    .xwx .wow .relative .pl-90 p {
+        font-size: 16px !important;
+    }
+
+    .box-slider-decor {
+        display: none;
+    }
+
+    .swiper-slide .slider-title {
+        font-size: 38px;
+    }
+
+    .swiper-slide:nth-child(1) .swiper-inner {
+        background-position: 50% center !important;
+    }
+
+    .swiper-slide:nth-child(2) .swiper-inner {
+        background-position: 100% center !important;
+    }
+
+    .swiper-slide:nth-child(3) .swiper-inner {
+        background-position: 90% center !important;
+    }
+
+    .swiper-slide .swiper-inner .op-2 {
+        opacity: 0.35 !important;
+    }
+}
+
 .width28 {
     width: 28%;
 }
 
+@media (max-width: 1200px) {
+    .width28 {
+        width: 35%;
+    }
+}
+
+@media (max-width: 991px) {
+    .width28 {
+        width: 45%;
+    }
+}
+
+
 .blkline {
     padding: 30px 0 30px 0;
     border-top: solid 0.5px rgb(0, 0, 0, .2);
+}
+
+@media (max-width: 768px) {
+    .dsz h3 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dsz h3 {
+        font-size: 18px;
+    }
+
+    .fsf .wow .relative p {
+        font-size: 14px;
+        line-height: 1.2em;
+    }
 }
